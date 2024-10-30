@@ -1,12 +1,9 @@
-/* General reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-/* Background and overall body styling */
 body {
     background: linear-gradient(135deg, #a8edea, #fed6e3);
     color: #333;
@@ -15,7 +12,6 @@ body {
     flex-direction: column;
     align-items: center;
 }
-/* Header styling */
 header {
     width: 100%;
     padding: 20px;
@@ -46,18 +42,12 @@ nav a {
 nav a:hover {
     color: #d40000;
 }
-/* Updated List Styling */
 .resources-section ul {
     list-style: none;
     padding: 0;
 }
-
-/* Space between links */
 .resources-section ul li {
-    margin-bottom: 20px; /* Increased space between links */
-}
-
-/* Enhanced Link Styling */
+    margin-bottom: 20px; 
 .resources-section ul li a {
     display: block;
     background: #007acc;
@@ -71,14 +61,11 @@ nav a:hover {
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect for resource links */
 .resources-section ul li a:hover {
     background: #005a99;
     transform: translateY(-6px); /* Slightly higher lift on hover */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
-
-/* Resources section styling */
 .resources-section {
     width: 90%;
     max-width: 800px;
