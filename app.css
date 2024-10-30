@@ -1,12 +1,9 @@
-/* General reset and font import */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-/* Body styling with a gradient background */
 body {
     background: linear-gradient(135deg, #a8edea, #fed6e3);
     color: #333;
@@ -15,8 +12,6 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
-/* Header styling, pinned to the top of the screen */
 header {
     width: 100%;
     padding: 20px;
@@ -44,7 +39,6 @@ nav a {
 nav a:hover {
     color: #d40000;
 }
-/* Main container styling to center content and fit screen size */
 main {
     background: #ffffff;
     width: 90%;
@@ -59,14 +53,10 @@ main {
     margin-top: auto;
     margin-bottom: auto;
 }
-
-/* Center the content in the main section */
 .input-section,
 .display-resource {
     margin-top: 10px;
 }
-
-/* Flex container for title and date inputs */
 .flex {
     display: flex;
     gap: 15px;
@@ -92,8 +82,6 @@ input[type="date"]:focus {
     border-color: #3b82f6;
     outline: none;
 }
-
-/* Button styling */
 button {
     padding: 12px;
     background-color: #3b82f6;
@@ -108,8 +96,6 @@ button {
 button:hover {
     background-color: #2563eb;
 }
-
-/* Delete All button styling */
 #clear {
     color: #ef4444;
     cursor: pointer;
@@ -122,8 +108,6 @@ button:hover {
 #clear:hover {
     color: #dc2626;
 }
-
-/* Table container styling */
 .display-resource {
     margin-top: 20px;
     overflow-y: auto;
@@ -158,7 +142,6 @@ td a {
 td a:hover {
     text-decoration: underline;
 }
-/* Search bar styling */
 #search-bar {
     width: 100%;
     padding: 14px;
@@ -172,15 +155,11 @@ td a:hover {
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* Change color on focus */
 #search-bar:focus {
     border-color: #3b82f6;
     background-color: #c2c2c2;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-
-/* Not Found message styling */
 #not-found-message {
     display: none;
     color: #ef4444;
@@ -189,8 +168,6 @@ td a:hover {
     font-size: 1em;
     margin-top: 10px;
 }
-
-/* Trash icon styling */
 .delete {
     color: #ef4444;
     cursor: pointer;
@@ -202,8 +179,6 @@ td a:hover {
 .delete:hover {
     color: #dc2626;
 }
-
-/* Responsive styling */
 @media (max-width: 768px) {
     main {
         width: 95%;
