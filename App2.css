@@ -1,0 +1,98 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background and overall body styling */
+body {
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Header styling */
+header {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav a {
+    display: inline-block;
+    color: #007acc;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d40000;
+}
+/* Updated List Styling */
+.resources-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Space between links */
+.resources-section ul li {
+    margin-bottom: 20px; /* Increased space between links */
+}
+
+/* Enhanced Link Styling */
+.resources-section ul li a {
+    display: block;
+    background: #007acc;
+    color: #ffffff;
+    font-size: 1.2em; /* Slightly larger font for better readability */
+    padding: 15px 20px; /* Increased padding for a better button-like feel */
+    border-radius: 12px; /* More pronounced rounding */
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for resource links */
+.resources-section ul li a:hover {
+    background: #005a99;
+    transform: translateY(-6px); /* Slightly higher lift on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Resources section styling */
+.resources-section {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.resources-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+

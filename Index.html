@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Learning Resource Tracker</title>
+    <meta name="description" content="A place where you can keep track of all your learning resources">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./app.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+<body onload="loadStoredResources()">
+    <header>
+        <h1>Welcome To <br>Learning Resource Tracker</h1>
+        <p>Learning Resource Tracker is your dedicated space to organize and manage all your educational materials efficiently. With this tool, you can easily track resources you find valuable, including articles, tutorials, videos, and courses. By saving links, setting dates, and adding titles for each resource, you’ll always have quick access to what you need when you need it. The Learning Resource Tracker also allows you to search through saved materials, ensuring you never lose track of important learning materials. Keep your knowledge resources organized, accessible, and within reach to support your continuous learning journey!</p>
+
+        <nav>
+            <a href="resources.html" class="resources-link">Click To See Educational Resources Websites</a>
+        </nav>
+        <nav>
+            <a href="team members.html" class="resources-link">Our Team Members</a>
+        </nav>
+    </header>
+    <main>
+        <section class="input-section">
+           
+            <input type="text" id="search-bar" placeholder="Search Resource Title" onkeyup="searchResource()">
+            <p id="not-found-message" style="display: none; color: #ef4444; font-weight: bold; text-align: center;">Not found</p>
+
+            <div class="flex">
+                <input type="text" id="title" class="flex-item" placeholder="Resource Title">
+                <input type="date" id="date" class="flex-item">
+            </div>
+            <input type="text" id="link" placeholder="Resource Link">
+            <button onclick="storeResource()">Track Resource</button>
+        </section>
+        <div class="divider"></div>
+        <div class="flex">
+            <p onclick="clearLocalStorage()" id="clear">Delete All</p>
+        </div>
+        <section class="display-resource">
+            <div id="container">
+                <table class="cont" id="cont">
+                    <tr><th>Resource Title</th><th>Resource Link</th><th>Resource Date</th><th>Delete</th></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const container = document.getElementById('cont');
+
+        
+        function storeResource() {
+            const resourceTitle = document.getElementById('title').value;
+            const resourceDate = document.getElementById('date').value;
+            const resourceLink = document.getElementById('link').value;
+
+            if (resourceTitle && resourceDate && resourceLink) {
+                let resources = JSON.parse(localStorage.getItem('resources')) || [];
+                resources.push({ title: resourceTitle, date: resourceDate, link: resourceLink });
+                localStorage.setItem('resources', JSON.stringify(resources));
+
+                displayResource(resourceTitle, resourceLink, resourceDate);
+
+                document.getElementById('title').value = "";
+                document.getElementById('date').value = "";
+                document.getElementById('link').value = "";
+            } else {
+                alert("Please fill in all fields!");
+            }
+        }
+
+        function displayResource(title, link, date) {
+            const row = document.createElement("tr");
+            row.classList.add("resource-row");
+            
+            row.innerHTML = `
+                <td>${title}</td>
+                <td><a href="${link}" target="_blank">${link}</a></td>
+                <td>${date}</td>
+                <td class="delete" onclick="deleteResource(this)"><i class="uil uil-trash"></i></td>
+            `;
+            
+            container.appendChild(row);
+        }
+
+        function loadStoredResources() {
+            const resources = JSON.parse(localStorage.getItem('resources')) || [];
+            resources.forEach(resource => {
+                displayResource(resource.title, resource.link, resource.date);
+            });
+        }
+
+        function deleteResource(element) {
+            const row = element.parentNode;
+            const title = row.cells[0].innerText;
+            const link = row.cells[1].innerText;
+            const date = row.cells[2].innerText;
+
+            let resources = JSON.parse(localStorage.getItem('resources')) || [];
+            resources = resources.filter(res => !(res.title === title && res.link === link && res.date === date));
+            localStorage.setItem('resources', JSON.stringify(resources));
+
+            row.remove();
+        }
+
+        function clearLocalStorage() {
+            localStorage.removeItem('resources');
+            container.innerHTML = '<tr><th>Resource Title</th><th>Resource Link</th><th>Resource Date</th><th>Delete</th></tr>';
+        }
+
+        function searchResource() {
+            const searchValue = document.getElementById('search-bar').value.toLowerCase();
+            const rows = document.querySelectorAll(".resource-row");
+            let found = false;
+
+            rows.forEach(row => {
+                const title = row.cells[0].innerText.toLowerCase();
+                if (title.includes(searchValue)) {
+                    row.style.display = "";  
+                    found = true;
+                } else {
+                    row.style.display = "none";
+                }
+            });
+
+            document.getElementById('not-found-message').style.display = found ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

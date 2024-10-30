@@ -1,0 +1,216 @@
+/* General reset and font import */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body styling with a gradient background */
+body {
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header styling, pinned to the top of the screen */
+header {
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+nav a {
+    display: inline-block;
+    color: #007acc;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d40000;
+}
+/* Main container styling to center content and fit screen size */
+main {
+    background: #ffffff;
+    width: 90%;
+    max-width: 900px;
+    min-height: 70vh;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Center the content in the main section */
+.input-section,
+.display-resource {
+    margin-top: 10px;
+}
+
+/* Flex container for title and date inputs */
+.flex {
+    display: flex;
+    gap: 15px;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* Button styling */
+button {
+    padding: 12px;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* Delete All button styling */
+#clear {
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: right;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#clear:hover {
+    color: #dc2626;
+}
+
+/* Table container styling */
+.display-resource {
+    margin-top: 20px;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9fafb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    font-size: 1em;
+}
+
+th {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+}
+
+td a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+/* Search bar styling */
+#search-bar {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #e0f7fa;
+    color: #333;
+    font-size: 1.1em;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Change color on focus */
+#search-bar:focus {
+    border-color: #3b82f6;
+    background-color: #c2c2c2;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Not Found message styling */
+#not-found-message {
+    display: none;
+    color: #ef4444;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Trash icon styling */
+.delete {
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.delete:hover {
+    color: #dc2626;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
